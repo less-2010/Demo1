@@ -1,32 +1,37 @@
 package day18.se03.n1Collection.homework;
 
 import java.util.HashMap;
-import java.util.Map;
+import java.util.Set;
 
 public class Test {
-    @Override
-    public int hashCode() {
-        return super.hashCode();
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
-    }
-
     public static void main(String[] args) {
-        Map<String,String> map = new HashMap<String,String>();
-        String string = "qazwsxedcqazwsxqaz";
+        test("qazwsxedcqazwsxqaz");
+    }
 
-            for (int i = 0; i <=map.size() ; i++) {
-
-
-
-
+    /**
+     * @see Set
+     * @see HashMap
+     * @param string
+     *
+     * 计算字符串中字符出现的次数(使用Map)
+     */
+    private static void test(String string) {
+        HashMap<Character,Integer>map = new HashMap<>();
+        for (int i = 0; i < string.length(); i++) {
+            char c= string.charAt(i);
+            if (map.get(c)==null){
+                map.put(c,1);
+            }else {
+                map.put(c,map.get(c)+1);
+            }
+        }
+        Set<Character> keys = map.keySet();
+        for (Character key:keys
+             ) {
+            System.out.println(key+":"+map.get(key)+"个");
 
         }
-
-
-
     }
+
+
 }
