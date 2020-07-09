@@ -10,8 +10,8 @@ public class Demo02Object {
 //        3、设置一个无参构造和一个全参构造
 
         Person p = new Person();
-        System.out.println(p.hashCode());//1163157884
-        System.out.println(p.toString());//没重写  day15.se01.n1object.Person@4554617c
+        System.out.println(p.hashCode());//1163157884   //重写后 31
+        System.out.println(p.toString());//没重写  day15.se01.n1object.Person@4554617c  //重写后 Person{name='null', age=null}
 
 
     }
