@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<students
+        xmls="http://www.zte.cn/xml"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zte.cn/xml student.xsd">
+    <student number="1">
+        <name>tom</name>
+        <age>18</age>
+        <sex>man</sex>
+    </student>
+
+</students>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>输出propertices集合到xml</comment>
+<entry key="704085">{stu_UseName='qaz', stu_PassWord='123456', stu_Name='黄远兵', stu_Sex='男', stu_Id=704085, stu_Age=16, stu_Score=0}</entry>
+</properties>

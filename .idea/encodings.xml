@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/folder/io/object/person.obj" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/folder/io/reverse/out2.txt" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/folder/io/reverse/outGBK.txt" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/jol-benchmarks/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jol-cli/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jol-cli/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jol-core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jol-core/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jol-samples/src/main/java" charset="UTF-8" />
   </component>
 </project>

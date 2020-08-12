@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>写出</comment>
+<entry key="sex">男</entry>
+<entry key="pwd">123</entry>
+<entry key="username">qaz</entry>
+<entry key="id">10001</entry>
+</properties>
