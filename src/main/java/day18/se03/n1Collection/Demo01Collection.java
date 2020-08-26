@@ -19,11 +19,11 @@ public class Demo01Collection {
          * 两个重要的子接口，分别是java. util. List和java. util。Set。
          * List的特点是元素有序、可重复。Set的特点是元素无序、不可重复。
          * List接口的主要实现类有: java . util.ArrayList和java . util. LinkedList,
-         * Set接口的主要实现类有: iava . util. HashSet和iava. util. TreeSet。
+         * Set接口的主要实现类有: java . util. HashSet和java. util. TreeSet。
          */
 //
-//        Collection是单列    集合的父接口，我们以它的引用和它的实现类
-//        ArrayList的对象(向上造型)来说明它的常用方法。(这些方法  6
+//        Collection是单列集合的父接口，我们以它的引用和它的实现类
+//        ArrayList的对象(向上造型)来说明它的常用方法。(这些方法
 //        适用于Collection的所有实现类)
         Collection<String> coll=new ArrayList<String>();
 //        添加功能: boolean add(Object o)

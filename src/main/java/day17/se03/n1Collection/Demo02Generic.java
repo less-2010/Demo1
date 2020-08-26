@@ -29,7 +29,5 @@ public class Demo02Generic {
         d.play(new Dog());
 //        d.play(new Bird());//报错
 
-
-
     }
 }

@@ -35,11 +35,27 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/LeetCode/leetcode/editor/cn/[189]旋转数组.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/src/LeetCode/leetcode/editor/cn/[189]旋转数组.java" />
+              <option name="questionId" value="189" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/LeetCode/leetcode/editor/cn/[1]两数之和.java">
           <value>
             <LeetcodeEditor>
               <option name="path" value="$PROJECT_DIR$/src/LeetCode/leetcode/editor/cn/[1]两数之和.java" />
               <option name="questionId" value="1" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/LeetCode/leetcode/editor/cn/[202]快乐数.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/src/LeetCode/leetcode/editor/cn/[202]快乐数.java" />
+              <option name="questionId" value="202" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -56,6 +72,22 @@
             <LeetcodeEditor>
               <option name="path" value="$PROJECT_DIR$/src/LeetCode/leetcode/editor/cn/[3]无重复字符的最长子串.java" />
               <option name="questionId" value="3" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/LeetCode/leetcode/editor/cn/[43]字符串相乘.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/src/LeetCode/leetcode/editor/cn/[43]字符串相乘.java" />
+              <option name="questionId" value="43" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/LeetCode/leetcode/editor/cn/[73]矩阵置零.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/src/LeetCode/leetcode/editor/cn/[73]矩阵置零.java" />
+              <option name="questionId" value="73" />
             </LeetcodeEditor>
           </value>
         </entry>

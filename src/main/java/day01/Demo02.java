@@ -58,7 +58,7 @@ public class Demo02 {
         // boolean bool=1;//数 据类型不匹配
         // System. out.println(Boolean.MAX_VALUE);//报错
         // 4-4、字符类: 1种
-        final char c='中';//单引号引起来的内容，放且只能放一一个字符。
+        final char c ='s';//单引号引起来的内容，放且只能放一一个字符。
         // System.out.println(Char.MAX_VALUE); 报错
         // 4-5、其他进制写法:
         final int a10=100000; //10进制写法

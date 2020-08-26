@@ -28,7 +28,7 @@ public class Test {
         Set<Character> keys = map.keySet();
         for (Character key:keys
              ) {
-            System.out.println(key+":"+map.get(key)+"个");
+            System.out.println(key+":"+map.get(key)+"次");
 
         }
     }

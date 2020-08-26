@@ -8,12 +8,8 @@
         <outputRelativeToContentRoot value="true" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="jol-benchmarks" target="1.5" />
-      <module name="jol-cli" target="1.7" />
-      <module name="jol-core" target="1.7" />
-      <module name="jol-parent" target="1.5" />
-      <module name="jol-samples" target="1.7" />
-    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_STRING" value="-encoding UTF8" />
   </component>
 </project>

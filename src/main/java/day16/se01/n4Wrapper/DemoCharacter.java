@@ -11,7 +11,7 @@ public class DemoCharacter {
         char ch2=ch1. toString(). charAt(0);
         char ch3=Character . toString(ch1) . charAt(0) ;
 //        Character除了提供包装类和基本数据类型的转换外，还提供了一些实用
-        的方法:
+//        的方法:
 //        3、判断一个字符是否为字母或阿拉伯数字
         System . out. println(Character . isLetter('A'));
         System. out. println(Character. isDigit('9'));

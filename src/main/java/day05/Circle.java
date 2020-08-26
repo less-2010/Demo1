@@ -11,35 +11,35 @@ package day05;
 import java.util.Scanner;
 
 public class Circle {
-    float r ;
-    float pi =3.14f;
-    
+    double r;
+    static final double PI = 3.14d;
+
+    public Circle(int i) {
+        r=i;
+    }
+
     //无参数构造函数
-    public void Circle(){
+    public void Circle() {
         r = 1;
     }
-    public void Circle(float r){
-    // 有参数构造函数
+
+    public void Circle(double r) {
+        // 有参数构造函数
         this.r = r;
     }
 
-    public float Lenght(float r) {
-        return pi * r * 2;
-        // System.out.println("面积="+pi*r*2);
-
-    }
-    public float Area(float r) {
-        return 2* pi*r;
-       // System.out.println("面积="+pi*r*r);
-
+    public double Lenght(double r) {
+        return PI * r * 2;
     }
 
-    public static void main(String[] args) {
-        Circle S = new Circle();
-        S.Lenght(1);
-        S.Area(2);
-        S.Circle(2);
-        
+    public double Area() {
+        return 2 * PI * r;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Circle{" +
+                "r=" + r +
+                '}';
+    }
 }
