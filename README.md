@@ -1,3 +1,13 @@
+
+
+# 目录
+
+[TOC]
+
+------
+
+
+
 # 一、javaSE基础
 
 ### 1、变量和常量
@@ -543,47 +553,6 @@ equals()是字符串之间的比较，比较的是两个值是否相等，比如
 	}
 ```
 
-
-
-#### 5-2、 循环语句
-
-```java
-1）if()...else...if()
-
-    int s = 75;
-    if (s >= 90) {
-        System.out.println("优秀");
-    } else if (s >= 80) {
-        System.out.println("良好");
-    } else if (s >= 70) {
-        System.out.println("中等");
-    } else if (s >= 60) {
-        System.out.println("及格");
-    } else {
-        System.out.println("不及格");
-    }
-
-```
-
-```java
-2) switch 
-    int num = 6;
-    switch (num) {
-    case 1:
-    System.out.println("代码1");
-    break;
-    case 2:
-    System.out.println("代码2");
-    break;
-    case 3:
-    System.out.println("代码3");
-    break;
-    default:
-    System.out.println("默认");
-    }
-    System.out.println("结束");
-
-```
 ####5-3、循环语句
 
   ##### 5-3-1、while 循环语句
@@ -605,6 +574,7 @@ equals()是字符串之间的比较，比较的是两个值是否相等，比如
   ##### 5-3-2、do...while 循环
 
 ```java
+/** 
  * do-while特征：先执行，后判断。不管条件是否成立，至少会执行一次
  *
  */ 
@@ -645,7 +615,7 @@ public static void main(String[] args) {
   ##### 5-3-4、foreach 语句
 
 ```java
-  用于数组或集合的遍历取值；不能赋值
+  //用于数组或集合的遍历取值；不能赋值
   int array[] = {7, 8, 9};
        for (int arr : array) {
        System.out.println(arr);
@@ -664,11 +634,58 @@ public static void main(String[] args) {
  4、continue：自己目前只在循环体应用。continue；跳过本次循环体中余下尚未执行的语句，接着再一次进行循环的条件判定是否执行。
    
   ```
+##### 5-4-1、break
+
+```text
+中断的意思，遇到break跳出循环语句结束循环
+```
+
+```java
+	for (int i = 1; i <=10; i++) {
+		if (i==5) {
+		break;//遇到break直接跳出循环语句结束循环
+		}
+		System.out.println(i);
+	}
+//结果:1 2 3 4 
+```
+##### 5-4-2、continue
+
+```text
+继续的意思，遇到continue，continue后面的代码不执行，直接继续执行下一次循环
+```
+
+```java
+	for (int i = 1; i <=10; i++) {
+		if (i==5) {
+			continue;//遇到continue后面代码不执行，直接继续下一次循环
+		}
+		System.out.println(i);
+	}
+//结果: 1 2 3 4  6 7 8 9  10
+```
+##### 5-4-3、return
+
+```java
+用于方法内部返回结果值,也会提前结束循环返回结果
+```
+
+```java
+public boolean login(String name,int pwd){
+		for (int i = 0; i < names.length; i++) {
+			if (names[i].equals(name)&&passwords[i]==pwd) {
+				return true;//返回结果，结束循环
+			}
+		}
+		return false;
+	}
+```
+
 # 二、面向对象
 
-## 6、OOP
+## 1、OOP
 Object Orieented Programming 面型对象编程，是编程思想中最重要的概念
-### 6-1 面向过程：
+### 1-1 面向过程：
 1）、概述：
 
     在OOP之前我们是面向过程编程
@@ -679,9 +696,9 @@ Object Orieented Programming 面型对象编程，是编程思想中最重要的
     1、代码在一个类中，自上而下执行，代码耦合度高，后期拓展和维护成本高
     2、代码自上而下执行，代码复用性不高
 
-### 6-2 面向对象：
-### 6-3、面型对象特性：
-#### 6-2-1、封装
+### 1-2 面向对象：
+### 1-3、面型对象特性：
+#### 1-2-1、封装
 1、概念：
 
     概念：把客观事物抽象成抽象的类，并且类可以把自己的属性和方法只让可以信任的类或者对象进行操作，对不可以信任的类或者对象隐藏，这样的过程叫做封装。
@@ -731,7 +748,7 @@ public class LazySingleton {
         System. out . println(ls3.a);
         System. out . println(ls4.a);//A没有实现单例
 ```
-#### 6-2-2、继承
+#### 1-2-2、继承
 
 1)、概述：
 
@@ -745,14 +762,14 @@ public class LazySingleton {
     实现继承是指直接使用基类的属性和方法而无需额外编码的能力；
     接口继承是指仅使用属性和方法的名称，但是子类必须提供实现的能力；
 
-#### 6-2-3、多态
+#### 1-2-3、多态
 1)、概述：
 
     所谓多态就是指一个类实例的相同方法在不同情况有不同的表现形式。
     多态机制使具有不同内部结构的对象可以共享相同的外部接口。
     这意味着，虽然针对不同对象的具体操作不同，但通过一个公共的类，它们（那些操作）可以通过相同的方式调用。
     最常见的多态就是将子类纳入父类参数中，运行时调用父类方法时通过引入的子类决定具体的内部结构或行为。
-### 6-3 类与对象
+### 1-3 类与对象
 1、类：
 
     类（ class ) 归类，把相同特征的属性和方法归为一类，类里面有属性和方法，是构造对象的模板或蓝图 ，是一个抽象的概念
@@ -839,12 +856,12 @@ public class Test{
 }
 ```
 
-## 7、方法
+## 2、方法
 
-### 7-1、定义
+### 2-1、定义
 
     把逻辑细节用方法封装起来，通过对象能够重复调用方法。代码复用，提高工作效率
-### 7-2、方法种类
+### 2-2、方法种类
 
 
 
@@ -852,7 +869,7 @@ public class Test{
 
 
 
-  ### 7-3、阐述形参和实参的使用
+  ### 2-3、阐述形参和实参的使用
 
     1) 形参:
         定义时可以没有实际值，但要有数据类型，可以接受实参传递过来的相应
@@ -863,7 +880,7 @@ public class Test{
     3) 传递方式:
         位置对应原则。
 
-### 7-4、对象数组
+### 2-4、对象数组
 1.案例1 基本数组类型（值传递）为方法参数
  在实参中复制了一份值给参数，形参里面发生改变，实参不发生改变
 
@@ -910,12 +927,12 @@ public class Test{
 }
 ```
 
-#### 7-4-1 根据参数返回值分类    
+#### 2-4-1 根据参数返回值分类    
     1)、无参无返回值方法
     2）、无参有返回值方法    
     3）、有参无返回值方法
     4）、有参有返回值方法
-#### 7-4-2 根据功能实现
+#### 2-4-2 根据功能实现
 1）、构造方法 (构造函数)
     
     构造函数，是一种特殊的方法。主要用于在创建对象时初始化对象，即为对象成员赋值初始值，总与新运算符一起使用在创建对象的语句中。
@@ -925,7 +942,7 @@ public class Test{
     如果在编写一个可实例化的类时没有专门编写的构造函数，则多个编程语言会自动生成变形构造器（重组构造函数）。
 
 2）、成员方法
-### 7-5、方法重载
+### 2-5、方法重载
 简单说，就是函数或者方法有同样的名称，但是参数列表不相同的情形，这样的同名不同参数的函数或者方法之间，互相称之为重载函数或者重载方法。
 ```java
 public class Test {
@@ -941,10 +958,10 @@ public class Test {
     
 }
 ```
-### 7-6、方法的重写
+### 2-6、方法的重写
     重写指的是在Java的子类与父类中有两个名称、参数列表都相同的方法的情况。由于他们具有相同的方法签名，所以子类中的新方法将覆盖父类中原有的方法。
     使得代码扩展性更强
-#### 7-6-1、方法重写的“两同两小一大”原则
+#### 2-6-1、方法重写的“两同两小一大”原则
 
 ```java
 1) 两同:
@@ -957,7 +974,7 @@ public class Test {
     3-1) 子类的访问权限大于或等于父类的 子类的访问控制小于父类的，确保访问父类时一定能访问子类。
 ```
 
-### 7-7 、方法重写与方法重载的区别
+### 2-7 、方法重写与方法重载的区别
 
 ```text
 1) 重载:
@@ -970,16 +987,16 @@ public class Test {
 
 
 
-## 8、枚举
+## 3、枚举
 
-### 8-1、 什么是枚举
-#### 8-1-1、概述：
+### 3-1、 什么是枚举
+#### 2-1-1、概述：
     枚举是一种数据类型，具有集合的一些特点，可以存放多个元素，但存储对象有限且固定
-### 8-2、枚举的使用场景:
+### 3-2、枚举的使用场景:
     如我们需要表达性别（男、女），颜色（红、黄、蓝），星期（星期一、星期二...星期日），四季（春、夏、秋、冬），
     地理位置（东、西、南、北），方向（前、后、左、右）等，这些场景都非常适合枚举。
-### 8-3、 定义枚举 
-#### 8-3-1、默认构造器（空构造器）
+### 3-3、 定义枚举 
+#### 3-3-1、默认构造器（空构造器）
 ```java
 
 class Test {
@@ -1046,7 +1063,7 @@ class Test {
 
 
 ```
-#### 8-3-2、定义了成员变量、带参构造器    
+#### 3-3-2、定义了成员变量、带参构造器    
 ```java
 
 /**
@@ -1113,7 +1130,7 @@ public enum Week {
     }
 }
 ```
-### 8-4、注意：
+### 3-4、注意：
 
     枚举和类一样，可以有多个构造器，即有了一个带参构造器，还可以有无参构造器，编译是可以通过的。
     除此之外：
@@ -1122,16 +1139,16 @@ public enum Week {
     所有的枚举值都是常量，默认采用了public static final 进行了修饰，enum不是类，自然也不能被继承或实现；
     枚举值必须在第一行，否则编译出错
 
-## 9、继承
+## 4、继承
     作为一门面向对象开发的语言，代码复用是Java引人注意的功能之一。Java代码的复用有继承，组合以及代理三种具体的表现形式。
-### 9-1、概述：
+### 4-1、概述：
     继承：如果多个类的某个部分的属性或功能相同，那么可以抽象出一个类出来，把他们的相同部分都放到父类里，让他们都继承这个类。
     子类继承父类就可以拥有父类的属性和方法（私有的除外），优点是：提高代码复用
     
     继承是java面向对象编程技术的一块基石，因为它允许创建分等级层次的类。
     继承就是子类继承父类的特征和行为，使得子类对象（实例）具有父类的实例域和方法，或子类从父类继承方法，使得子类具有父类相同的行为。
-###  9-2、向上转型和向下转型
-#### 9-2-1、概述
+###  4-2、向上转型和向下转型
+#### 4-2-1、概述
     要转型，首先要有继承。继承是面向对象语言中一个代码复用的机制，
     简单说就是子类继承了父类中的非私有属性和可以继承的方法，然后子类可以继续扩展自己的属性及方法。
     
@@ -1362,17 +1379,17 @@ public class Test {
 }
 
 ```
-### 9-3、继承关系
+### 4-3、继承关系
 
 ![img](https://www.runoob.com/wp-content/uploads/2013/12/types_of_inheritance-1.png)
 
-### 9-4、继承关键字
+### 4-4、继承关键字
 
 ```text
 继承可以使用 extends 和 implements 这两个关键字来实现继承，而且所有的类都是继承于 java.lang.Object，当一个类没有继承的两个关键字，则默认继承object（这个类在 java.lang 包中，所以不需要 import）祖先类。
 ```
 
-### 9-5、继承的特性
+### 4-5、继承的特性
 
 ```text
 1)、子类拥有父类非 private 的属性、方法。
@@ -1386,45 +1403,391 @@ public class Test {
 5）、提高了类之间的耦合性（继承的缺点，耦合度高就会造成代码之间的联系越紧密，代码独立性越差）
 ```
 
-### 9-6、注意 
+### 4-6、注意 
     继承关系下,会优先走父类的无参构造,再去走子类的无参数构造,可以把一些初始化的工作交给父类无参构造
 
-## 10、多态
-### 10-1、概述:
+## 5、多态
+### 5-1、概述:
         顾名思义，是指多种形态;相同的调用，得到不同的形态结果。不同子类
     或实现类的引用值赋值给父类或父接口的引用变量，调用父类或父接口的方法时，
     会运行不同子类或实现类的不同方法。
     简单来说，多态是同一个行为具有多个不同表现形式或形态的能力。
     多态就是同一个接口，使用不同的实例而执行不同操作
-### 10-2、形成多态的三个前提条件:
+### 5-2、形成多态的三个前提条件:
     继承、重写、向上造型。
-### 10-3、多态的实现方式
-#### 10-3-1、方式一：重写：
+### 5-3、多态的实现方式
+#### 5-3-1、方式一：重写：
 这个内容已经在上一章节详细讲过，就不再阐述，详细可访问：Java 重写(Override)与重载(Overload)。
 
-#### 10-3-2、方式二：接口
+#### 5-3-2、方式二：接口
 1. 生活中的接口最具代表性的就是插座，例如一个三接头的插头都能接在三孔插座中，
 因为这个是每个国家都有各自规定的接口规则，有可能到国外就不行，那是因为国外自己定义的接口类型。
 2. java中的接口类似于生活中的接口，就是一些方法特征的集合，但没有方法的实现。
 具体可以看 java接口 这一章节的内容。
 
-#### 10-3-3、方式三：抽象类和抽象方法
+#### 5-3-3、方式三：抽象类和抽象方法
 详情请看 Java抽象类 章节。    
     
-### 10-4、意义（优点）:
+### 5-4、意义（优点）:
         提供统一入口形成约定、提高代码复用性、提高代码可扩展性、降低代码
     的耦合度
+
+### 5-5、实例
+
+父类 Person.java
+
+```java
+
+/**
+ * 父类 人类
+ * @author BING
+ * @date 2020/8/20
+ */
+public class Person {
+    private String name;
+    private int age;
+    private char sex;
+    private int weight;
+
+    public Person(){
+        System.out.println("人类，无参构造");
+    }
+    public  Person(String name,int age,char sex,int weight){
+        this.name= name;
+        this.age= age;
+        this.sex = sex;
+        this.weight= weight;
+    }
+
+    /**
+     *
+     * @return String
+     */
+    public String study(){
+       return  "学习";
+    }
+//Getter Setter
+}
+
+```
+
+子类 Student.java
+
+```java
+
+import java.util.Objects;
+
+/**
+ * 学生类 继承Person类
+ * @author BING
+ * @date 2020/8/19 15:33
+ *
+ */
+public class Student extends Person {
+    //学费
+    private double money;
+
+
+    public Student(){
+        System.out.println("学生，无参构造方法");
+    }
+    //super 调用父类的构造方法
+    public Student(String name,int age,char sex,int weight,double money){
+        super(name, age, sex, weight);
+        this.money = money;
+    }
+
+    public double getMoney() {
+        return money;
+    }
+
+    public void setMoney(double money) {
+        this.money = money;
+    }
     
+    @Override
+    public String study() {
+        return "我是学生，我在："+super.study()+"学生考试知识";
+    }
+}
 
- ## 11、封装
+```
 
-  ### 11-1、包的概念:
+子类 Teacher.java
 
+```java
+
+/**
+ * 子类 教师类 继承Person类
+ * @author BING
+ * @date 2020/8/19 15:38
+ */
+public class Teacher extends Person {
+    double wage;//工资
+
+    public Teacher() {
+        System.out.println("教师，无参构造方法");
+    }
+
+    public Teacher(String name, int age, char sex, int weight, double wage) {
+        super(name, age, sex, weight);
+        this.wage = wage;
+    }
+
+    public double getWage() {
+        return wage;
+    }
+
+    public void setWage(double wage) {
+        this.wage = wage;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public  String  teach(){
+     return "老师 ，教书";
+    }
+
+    @Override
+    public String study() {
+        return "老师，在：" +super.study()+"学生管理知识";
+    }
+}
+
+```
+
+孙子类 PETeacher.java
+
+```java
+
+/**
+ * 体育老师类 继承 Teacher类
+ * @author BING
+ * @date 2020/8/19 16:20
+ */
+public class PETeacher extends Teacher {
+    String clazz;//班级
+    public PETeacher(String name, int age, char sex, int weight, double wage, String clazz) {
+        super(name, age, sex, weight, wage);
+        this.clazz = clazz;
+    }
+
+    public PETeacher() {
+        System.out.println("体育老师，无参构造方法");
+    }
+
+    public String getClazz() {
+        return clazz;
+    }
+
+    public void setClazz(String clazz) {
+        this.clazz = clazz;
+    }
+
+    @Override
+    public String teach() {
+        return super.teach();
+    }
+
+    @Override
+    public String study() {
+        //super.study()调用的是老师类的study方法
+        return  "我是体育"+super.study()+"体育知识";
+    }
+
+}
+
+```
+
+自习室类 StudyRoom.java
+
+```java
+/**
+ * 自习室类
+ * @author BING
+ *
+ */
+public class StudyRoom {
+    /**
+     * 自习方法
+     * @param person
+     */
+    public void selfStudy(Person person){
+        //以父类类型接受，因子类实例不同而会因调用到不同子类被重写的方法，从而表现出多态
+        System.out.println(person.study());
+    }
+}
+
+```
+测试类 Test.java
+
+```java
+/**
+ * @author BING
+ * @date 2020/8/20
+ */
+public class Test {
+    public static void main(String[] args) {
+
+
+        /* 多态 */
+        //形成多态的三个前提条件：
+        // 继承、重写、向上造型。
+        // 在学习这个行为上，不同类的人有不同的学习特点，相同的调用selfStudy()方法，得到不同的形态结果
+        StudyRoom studyRoom = new StudyRoom();
+
+        Person student2 = new Student();
+        //使用子类无参构造会先调用父类无参构造，所以先输出 “人类，无参构造”，然后输出“学生，无参构造方法”
+
+        //学生学习
+        studyRoom.selfStudy(student2);
+        Person teacher2  = new Teacher();
+        //老师学习
+        studyRoom.selfStudy(teacher2);
+        Person peTeacher = new PETeacher();
+        //体育老师学习
+        studyRoom.selfStudy(peTeacher);
+
+    }
+```
+
+输出 
+
+```text
+人类，无参构造
+学生，无参构造方法
+我是学生，我在：学习学生考试知识
+人类，无参构造
+教师，无参构造方法
+老师，在：学习学生管理知识
+人类，无参构造
+教师，无参构造方法
+体育老师，无参构造方法
+我是体育老师，在：学习学生管理知识体育知识
+```
+
+ ## 6、封装
+
+ ###  6-1、封装概述：
+    在面向对象程式设计方法中，封装（英语：Encapsulation）是指一种将抽象性函式接口的实现细节部分包装、隐藏起来的方法。
+    
+    封装可以被认为是一个保护屏障，防止该类的代码和数据被外部类定义的代码随机访问。
+    
+    要访问该类的代码和数据，必须通过严格的接口控制。
+    
+    封装最主要的功能在于我们能修改自己的实现代码，而不用修改那些调用我们代码的程序片段。
+    
+    适当的封装可以让程式码更容易理解与维护，也加强了程式码的安全性。
+
+### 6-2、 封装的优点
+     1. 良好的封装能够减少耦合。
+     
+     2. 类内部的结构可以自由修改。
+     
+     3. 可以对成员变量进行更精确的控制。
+     
+     4. 隐藏信息，实现细节。
+
+### 6-3、实现Java封装的步骤
+ 1)、修改属性的可见性来限制对属性的访问（一般限制为private），例如：
+
+```java
+ public class Person {
+     private String name;
+     private int age;
+ }
+```
+ 这段代码中，将 name 和 age 属性设置为私有的，只能本类才能访问，其他类都访问不了，如此就对信息进行了隐藏。
+
+ 2)、对每个值属性提供对外的公共方法访问，也就是创建一对赋取值方法，用于对私有属性的访问，例如：
+
+```java
+ public class Person{
+     private String name;
+     private int age;
+ 
+     public int getAge(){
+       return age;
+     }
+ 
+     public String getName(){
+       return name;
+     }
+
+     public void setAge(int age){
+       this.age = age;
+     }
+
+     public void setName(String name){
+       this.name = name;
+     }
+ }
+```
+ 采用 this 关键字是为了解决实例变量（private String name）
+ 和局部变量（setName(String name)中的name变量）之间发生的同名的冲突。
+
+ 3)、实例
+
+ 让我们来看一个java封装类的例子：
+ ```java
+ public class EncapTest{
+  
+    private String name;
+    private String idNum;
+    private int age;
+  
+    public int getAge(){
+       return age;
+    }
+  
+    public String getName(){
+       return name;
+    }
+  
+    public String getIdNum(){
+       return idNum;
+    }
+  
+    public void setAge( int newAge){
+       age = newAge;
+    }
+  
+    public void setName(String newName){
+       name = newName;
+    }
+  
+    public void setIdNum( String newId){
+       idNum = newId;
+    }
+ }
+ ```
+ 以上实例中public方法是外部类访问该类成员变量的入口。
+
+ 通常情况下，这些方法被称为getter和setter方法。
+
+ 因此，任何要访问类中私有成员变量的类都要通过这些getter和setter方法。
+
+ 通过如下的例子说明EncapTest类的变量怎样被访问：
+  ```java
+ public class RunEncap{
+    public static void main(String args[]){
+       EncapTest encap = new EncapTest();
+       encap.setName("James");
+       encap.setAge(20);
+       encap.setIdNum("12343ms");
+       System.out.print("Name : " + encap.getName()+ 
+                              " Age : "+ encap.getAge());
+     }
+ }
+  ```
+  ### 6-4、包的概念:
     1) 如果仅仅将类名作为类的唯一标识，则不可避免会出现命名冲突，java中用包的概念来解决命名冲突。在定义类时，第一行必须是声明包的语句， 类的全称是包名加类名。包在存储空间上是以项目开始的文件夹的层次目录。
     2) 正规的包命名规则是域名倒着写，其后跟项目名、模块名。例如:cn. com. zte. project1. register
     3) 访问一个类时，可以使用类的全称，但是这样过于繁琐。
     4) 通过import语句声明了类的全称，该源文件中就可以直接用类名来表示类的全称了
- ### 11-2、访问权限修饰符:
+ ### 6-5、访问权限修饰符:
 
     访问修饰符可以用于修饰属性和方法，用于定义属性和方法的权限
     
@@ -1433,12 +1796,10 @@ public class Test {
      3) protected修饰的成员:可以在本类和同包、以及异包的子类中访问。
      4) public修饰的成员:可以在整个项目中访问。
 
-![image-20200826162239954](C:\Users\BING\IdeaProjects\Demo1\imges\image-20200826162239954.png)
-
- ## 12、内部类:
+ ## 7、内部类:
     1) 定义：
         一个类可以定义在另一个类的内部，这个类称为另外-个类的内部类
-  ### 12-1、成员内部类:
+  ### 7-1、成员内部类:
 
     当定义的位置是作为一一个成员时，称为成员内部类
     1) 对外不具备可见性，所属外部类则可见。
@@ -1448,12 +1809,61 @@ public class Test {
     5) 对外要new内部类对象，得通过外部类的对象进行
     6) 内部类和所属外部类是两个类。参见.class文件
 
-  ### 12-2、局部内部类:
+```java
+
+public class Outer {
+	String name = "张三";
+	//内部类对象作为外部类成员
+	Inner in = new Inner();
+	public class Inner{
+		String name = "李四";
+		public  void innerMet() {
+			System.out.println("内部类访问内部类属性"+this.name);
+			System.out.println("内部类访问外部类属性"+Outer.this.name);
+		}
+	}
+	public static void main(String[] args) {
+		//方式一 
+		Outer out = new Outer();
+		Inner in1 = out.new Inner();
+		in1.innerMet();
+		//方式二  //内部类对象作为外部类成员 然后通过外部类对象调用
+		out.in.innerMet();
+	}
+}
+```
+  ### 7-2、局部(方法)内部类:
     当定义的位置在方法内或某作用域内时，称为局部内部类
     1) 类似于一个局部变量，只在本方法内或本作用域内定义后有效。
     2) 类似于局部变量，不能用static修饰。
-
-  ### 12-3、 匿名内部类:
+```java
+/**
+ * 方法内部类
+ * @author BING
+ *
+ */
+public class MethodInnerClass {
+	public void show() {
+		final int a = 20;
+		int b = 15;
+		class Inner{
+			int c = 10;
+			public void print() {
+				System.out.println("访问外部类的方法中的常量"+a);
+				System.out.println("访问外部类的方法中的变量"+b);
+				System.out.println("访问内部类中的变量"+c);
+			}
+		}
+		Inner in = new Inner();
+		in.print();
+	}
+	public static void main(String[] args) {
+		MethodInnerClass out = new MethodInnerClass();
+		out.show();
+	}
+}
+```
+  ### 7-3、 匿名内部类:
     没有类名(匿名)，是对某个类的继承或某个接口的实现
     1) 定义方式:(比较特别) new Class(){}。
     2) 作用:一 般用于实现父类或者接口中的方法。
@@ -1462,18 +1872,108 @@ public class Test {
     5) 该对象如果需要引用，只能向上造型。
     6) 可以作为成员内部类存在，也可以作为局部内部类存在。
     7) .class文件名 为: outer$1.class
+```java
+/**
+ * 匿名内部类
+ * @author BING
+ *
+ */
+public class NMInnerClass {
+	
+	
+	
+	Person p = new Person() {
+		
+		@Override
+		public void eat() {
+			System.out.println("匿名内部类方法");
+		}
+	};
+	public static void main(String[] args) {
+		NMInnerClass  out = new NMInnerClass();
+		//连调
+		out.p.eat();
+		
+	}
+}
 
-  ### 12-4、静态内部类:
+```
+  ### 7-4、静态内部类:
     static修饰的内部类
     1) 只能是成员内部类，不能是局部内部类。
     2) 不能访问外部类的实例成员。
     3) 匿名内部类唯一的对象可以赋值给静态成员。
+  ```JAVA
+public class StaticOutInClass {
+	String name ="张三";
+	static String hobby="篮球";
+	public static class Inner{
+		static String name2 = "李四";
+		
+		public  void test() {
+			System.out.println("范围内部类的name2:"+name2);
+			//访问外部类属性
+			StaticOutInClass out = new StaticOutInClass();
+			System.out.println("外部类的name:"+out.name);
+			System.out.println("外部类的hobby:"+out.hobby);
+			
+		}
+	}
+	public static void main(String[] args) {
+		//静态内部类不需要创建外部类对象，可以直接创建静态内部类对象使用
+		Inner in = new Inner();
+		in.test();
+	}
+}
+  ```
 
-  ### 12-5、可以实现多继承的效果
+  ### 7-5、可以实现多继承的效果
+  ```java
+/*
+ *  实现多继承
+ */
+public class Outer {
+	String name = "张三";
+	//内部类对象作为外部类成员
+	Inner in = new Inner();
+	Inner2  in2 = new Inner2();
+	public class Inner extends StaticOutInClass{
+		String name = "李四";
+		public  void innerMet() {
+			System.out.println("内部类访问内部类属性"+this.name);
+			System.out.println("内部类访问外部类属性"+Outer.this.name);
+		}
+		@Override
+		public void print() {
+			System.out.println("这是继承的方法1");
+		}
+		
+	}
+	public class Inner2 extends OutClass{
+		@Override
+		public void OutMethod() {
+			// TODO Auto-generated method stub
+			System.out.println("这是继承的方法2");
+		}
+	}
+	
+	public static void main(String[] args) {
+		//方式一 
+		Outer out = new Outer();
+		Inner in1 = out.new Inner();
+		in1.innerMet();
+		
+		//方式二  //内部类对象作为外部类成员 然后通过外部类对象调用
+		out.in.innerMet();
+		out.in.print();
+		out.in2.OutMethod();
+	}
+}
 
-       
-## 13、抽象类
-### 13-1、概述
+  ```
+
+## 8、抽象类
+### 8-1、概述
 ```
 在面向对象的概念中，所有的对象都是通过类来描绘的，但是反过来，并不是所有的类都是用来描绘对象的，如果一个类中没有包含足够的信息来描绘一个具体的对象，这样的类就是抽象类。
 
@@ -1485,7 +1985,7 @@ public class Test {
 
 在Java中抽象类表示的是一种继承关系，一个类只能继承一个抽象类，而一个类却可以实现多个接口。
 ```
-### 13-2 抽象类的定义
+### 8-2 抽象类的定义
  抽象类在Java语言中使用abstract class来定义抽象类。
 ```java
 /**
@@ -1535,14 +2035,14 @@ public abstract class Employee
    }
 }
 ```
-     
-### 13-3、抽象方法
-#### 13-3-1、概述
+
+### 8-3、抽象方法
+#### 8-3-1、概述
     抽象方法
     如果你想设计这样一个类，该类包含一个特别的成员方法，该方法的具体实现由它的子类确定，那么你可以在父类中声明该方法为抽象方法。   
     Abstract 关键字同样可以用来声明抽象方法，抽象方法只包含一个方法名，而没有方法体。    
     抽象方法没有定义，方法名后面直接跟一个分号，而不是花括号。
-#### 13-3-2、抽象方法的定义（代码实现）
+#### 8-3-2、抽象方法的定义（代码实现）
 ```java
 /**
 *   雇员类
@@ -1579,7 +2079,7 @@ public class Salary extends Employee
    //其余代码
 }
 ```
-### 13-4、抽象类总结规定
+### 8-4、抽象类总结规定
     1. 抽象类不能被实例化(初学者很容易犯的错)，如果被实例化，就会报错，编译无法通过。只有抽象类的非抽象子类可以创建对象。
     
     2. 抽象类中不一定包含抽象方法，但是有抽象方法的类必定是抽象类。
@@ -1589,21 +2089,171 @@ public class Salary extends Employee
     4. 构造方法，类方法（用 static 修饰的方法）不能声明为抽象方法。
     
     5. 抽象类的子类必须给出抽象类中的抽象方法的具体实现，除非该子类也是抽象类。
+## 9、接口
 
-## 14、常见面试题
-### 14-1、类成员、实例成员 区别
+```java
+/**
+ * 纸张接口
+ * @author BING
+ *
+ */
+public interface Paper {
+	public String getSize();
 
-#### 14-1-1、类成员:
+}
+```
+```java
+/**
+ * 墨盒接口
+ * @author BING
+ *
+ */
+public interface InkBox {
+/**
+ * 返回纸张大小 墨盒颜色
+ * @return
+ */
+	public String getColor();
+}
+
+```
+```java
+/**
+ * A4纸张
+ * @author BING
+ *
+ */
+public class A4Paper implements Paper {
+
+	@Override
+	public String getSize() {
+		// TODO Auto-generated method stub
+		return "A4";
+	}
+
+}
+
+```
+```java
+/**
+ * B5纸张
+ * @author BING
+ *
+ */
+public class B5Paper implements Paper {
+	@Override
+	public String getSize() {
+		// TODO Auto-generated method stub
+		return "B5";
+	}
+}
+```
+```java
+/**
+ * 彩色盒子
+ * @author BING
+ *
+ */
+public class ColorBox implements InkBox{
+
+	@Override
+	public String getColor() {
+		// TODO Auto-generated method stub
+		return "彩色";
+	}
+}
+
+```
+```java
+/**
+ * 灰色墨盒
+ * @author BING
+ *
+ */
+public class GrayInBox implements InkBox {
+
+	@Override
+	public String getColor() {
+		// TODO Auto-generated method stub
+		return "灰色";
+	}
+
+}
+
+```
+```java
+/**
+ * 打印机类
+ * @author BING
+ *
+ */
+public class Printer {
+	
+	private InkBox inkBox;
+	private Paper paper;
+	
+	
+	public InkBox getInkBox() {
+		return inkBox;
+	}
+	public void setInkBox(InkBox inkBox) {
+		this.inkBox = inkBox;
+	}
+	public Paper getPaper() {
+		return paper;
+	}
+	public void setPaper(Paper paper) {
+		this.paper = paper;
+	}
+	
+	public void print() {
+		//用接口实现多态
+		System.out.println("打印机效果："+inkBox.getColor()+"纸张"+paper.getSize());
+	}
+}
+```
+```java
+
+public class Test {
+	public static void main(String[] args) {
+		//创建墨盒接口对象
+		InkBox inkBox = null;
+		//创建纸张接口对象
+		Paper paper = null;
+	
+		
+		inkBox = new GrayInBox();
+		paper = new A4Paper();
+		
+		Printer printer = new Printer();
+		printer.setInkBox(inkBox);
+		printer.setPaper(paper);
+		printer.print();
+		
+		System.out.println("--------------------------");
+		inkBox = new ColorBox();
+		paper = new B5Paper();
+		printer.setInkBox(inkBox);
+		printer.setPaper(paper);		
+		printer.print();
+		
+	}
+}
+```
+## 10、常见面试题
+### 10-1、类成员、实例成员 区别
+
+#### 10-1-1、类成员:
         static修饰的，属于类的，属性可以类名点调用、也可以对象名点调用，行为必须类名点调用，加载时相对先加载一类加载时即加载。
-#### 14-1-2、实例成员:
+#### 10-1-2、实例成员:
         没有static修饰的，属于实例的，属性和行为都必须对象名点来调用，加载时相对后加载一new对 象时实例化。
 
-### 14-2、 普通类、抽象类、接口
+### 10-2、 普通类、抽象类、接口
 
-#### 14-2-1、相同点:
+#### 10-2-1、相同点:
     1）、都可以声明引用
     2）、都可以向上造型
-#### 13-2-2、不同点及使用场景:
+#### 10-2-2、不同点及使用场景:
 
     1) 普通类:
         有构造方法，可以new对象; 可以写普通方法，不能写抽象方法;既可以有成员变量，也可以有静态变量;只能单继承。
@@ -1614,33 +2264,161 @@ public class Salary extends Employee
     3) 接口:
         没有构造方法，不能new对象;不可以写普通方法，只能写抽象方法;不能有成员变量，只能有静态常量;可以多继承。
         使用场景:当想要对某些类进行行为上的约束，或者行为上也不约束、而只是作为某些类的共同标识时，使用接口;接口是对某些事物方法部分的、撮合性的抽象。 
+ ## 11、异常
+###11-1、概述
+     Java编程语言使用异常处理机制为程序提供了错误处理的能力;程序出现错误,程序安全退出的机制。
+     java是采用面向对象的方式来处理异常的。处理过程:
+     1.抛出异常:在执行一一个方法时，如果发生异常，则这个方法生成代表该异常的一个对象，停止当前执行路径，并把异常对
+     象提交给jre。
+     2.捕获异常: jre得到该异常后，寻找相应的代码来处理该异常。jre在方法的调用栈中查找，从生成异常的方法开始回
+     溯，直到找到相应的异常处理代码为止。     
+ ## 12、常用类
 
-        
-  ## 15、常用类
 
-    1) object类
+
+
+
+ ### 12-1、object类
         java.lang.object
         object类是类层次结构中最顶层父类。
         所有类(包括数组)直接或间接的继承自0bject类。
         同时也继承了该类中的方法
 
+### 12-2、包装类
+
+包装类是把基本数据类型转换为对象，是引用类型包包装类可以有很多操作的方法
+
+包装类的继承关系
+
+![包装类的继承关系图](imges/包装类继承关系.png)
 
 
-    参考自链接：https://blog.csdn.net/huhahuha_/java/article/details/80516198
 
-# 四、java高级特性
-## 16、泛型
+#### 12-2-1、包装类的创建(基本数据类型转成包装类)
+
+方式一、构造方法创建
+
+1.在构造方法中可将与之对应的基本数据类型作为构造方法参数，来创建包装类型的对象
+2.Character除外，在构造方法中可将对应的基本类型以字符形式作为构造方法参数，来创建包装类型的对象
+
+```java
+Double d2=new Double(98.72); .
+```
+
+方式二、以字符串方式创建包装类型对象
+
+```java
+Double d2=new Double("98.7"); .
+Boolean b2=new Boolean("true");
+Float f2=new Float("87.4");
+Character C2=new Character("男");/ /Character只能是字符类型为参
+```
+
+
+
+方式三、自动装箱
+
+```java
+//自动装箱
+Integer i = new Integer(10);//使用自动装箱
+Integer j = 10; //自动装箱 将一个基本数据类型传给包装类对象，底层自动实现
+
+```
+
+方式四、通过valueOf方法创建包装类对象
+
+```java
+int i = 10;
+Integer  integer= Integer.valueOf(i);
+Double d = Double.valueOf(i);
+```
+
+
+
+#### 12-2-2、把包装类转换成基本数据类型
+
+方式一、自动拆箱
+
+```java
+Integer i = new Integer(10);//自动装箱
+int intValue = i; //自动拆箱 将一个包装类对象转换成基本数据类型
+```
+
+方式二、使用包装类的xxxValue()方法
+
+```java
+Double dou = new Double(10);
+//使用包装类的xxxValue()方法
+
+double v = dou.doubleValue();
+int aInt = dou.intValue();
+```
+
+
+
+#### 12-2-3、包装类的特点总结：
+
+所有的包装类型都是final类型，不能创建他们的子类
+
+java5子后，允许基本数据类型和包装类型混合运算
+
+包装类型是引用类型存储在堆内存里面，基本类型数存储在栈内存中，由于由于存储简单的值，所以存储在栈内存的效率比较快
+
+但是在基本数据类型需要用到对象的时候或者调用方法的时候需要使用包装类
+
+### 12-3、String类
+
+#### 12-3-1、概述：
+
+注意: String不是基本数据类型! 是引用类型！！！
+
+String是一个特殊的包装类型，我们其他的包装类都是需要Integer age=new Integer()来创建，是保存在堆内存里面的。
+
+String str =new String()来创建
+
+也可以: str ing str2=" abc" ;来创建
+
+关于String str2="abc"java内部将此语句转化分为以下几个步骤:
+
+1.先定义一个名为str2的对String类的对象的引用变量存入栈中
+
+2.在常量池中查找是否存在内容为“abc"字符串对象。
+
+(3) 如果不存在则在常量池中创建"abc"，并让str引用该对 象。 
+
+(4) 如果存在则直接让str引用该对象。
+
+为了更好地说明这个问题，我们可以通过以下的几个代码进行验证
+
+```java
+String str1 =  "abc";
+String str2 = "abc";
+System.out.println(str1==str2);//true
+```
+
+面试题题：
+
+ 字符串中==比较引用地址是否相等
+ equals是比较两个字符串的值是否相等
+
+# 三、java高级特性
+
+## 1、泛型
 
 泛型 （Generic ） jdk1.5 加入的新特性
 
-### 16-1、概述：
+### 1-1、概述：
 
 ```text
+
+Java泛型(gener ics )是java5引入的一一个新特性，泛型提供了编译时类型安全的监测机制，该机制允许我们在编译时检测
+到非法的数据类型结构。泛型的本质是参数化类型，通过<>指定参数来设定该数据结构的数据类型。
+
 对类型的限定
 本质1：把对象、集合里面元素的类型推迟到创建集合的时候确定   本质2 ：把类型参数化  
 ```
 
-### 16-2、泛型的使用
+### 1-2、泛型的使用
 
 ```text
 <数据类型>    数据类型：只能是引用数据类型
@@ -1651,11 +2429,12 @@ jdk1.7加入了泛型推断，所以等号右边的泛型类型可以不加
 
 
 
-#### 16-2-1、未使用泛型
+#### 1-2-1、未使用泛型
 
 ```java
 public class Demo02Generic {
     public static void main(String[] args) {    
+        //1、可以添加任意类型
 		ArrayList a = new ArrayList();
         	a.add("1");
         	a.add("小明");
@@ -1664,13 +2443,13 @@ public class Demo02Generic {
              ) {
             String s = 	(String)object;
             //java.lang.ClassCastException
-            //会报类强制转换异常
+            //2、会报类强制转换异常
         }
 ```
 
 
 
-#### 16-2-2、使用泛型
+#### 1-2-2、使用泛型
 
 ```java
     public static void main(String[] args){
@@ -1685,9 +2464,22 @@ public class Demo02Generic {
             System.out.println(it.next());
         }
     }
+
+
+/**
+*泛型接口的实现类，-定要保证实现接口的泛型子类的泛型标识要包含泛型接口的标识
+*
+//public class Pair<T> implements Generator<T>{
+//泛型类继承泛型接口，除了必须标识父类的泛型标识之外，还可以实现泛型的扩充
+public class Pair<T,E> implements Generator<T>{
+@Override
+public T getKey() {
+return nu1l;
+I
+
 ```
 
-#### 16-2-3、自定义泛型
+#### 1-2-3、自定义泛型
 
 ```text
  泛型也可以自定义使用，也有三步骤:
@@ -1698,16 +2490,119 @@ public class Demo02Generic {
         4、泛型的触发:当调用设置的代码时  泛型:把类型作为变量的值
 ```
 
+#### 1-2-4、泛型通配符    ?  上限extends和下限super
+
+?是通配符 代表任意类型
+
+? extends  A  表示 这个类型为 A 或A的子类
+
+？super A 表示  这个类型为A的父类
+
+代码演示：
+
+```java
+
+```
 
 
-### 16-3、泛型的好处
+
+
+
+
+
+#### 1-2-6、泛型数组
+
+1、可以声明带泛型的数组引用，但是也不能直接创建带泛型的数组对象
+2、可以通过java.lang.Array .newInstance(Calss clz, int lengtn)创建
+
+自定义泛型数组
+
+```java
+
+import java.lang.reflect.Array;
+
+public class Fruit<T> {
+    private T[] array = null;
+    public Fruit(Class<T> clz, int length) {
+        //可以通过java.lang.reflect.Array的呢哇Instance(Class,int)创建T[]数组
+        array = (T[]) Array.newInstance(clz,length);
+    }
+
+    /**
+     * 添加元素
+     * @param index
+     * @param item
+     */
+    public void put(int index,T item){
+        this.array[index]=item;
+    }
+
+    /**
+     * 返回索引处的值
+     * @param index
+     * @return
+     */
+    public T get(int index){
+        return this.array[index];
+    }
+
+    /**
+     * 返回数组
+     * @return
+     */
+    public T[] getArray(){
+        return this.array;
+    }
+
+
+}
+
+```
+
+测试类
+
+```java
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Test {
+    public static void main(String[] args) {
+//        1、可以声明带泛型的数组引用，但是也不能直接创建带泛型的数组对象
+//        ArrayList[] lists = new ArrayList<String>[5];
+
+//        分为两步创建了一个能够存储5个长度的String类型的ArrayList的数组
+        ArrayList[] lists = new ArrayList[5];
+        ArrayList<String>[]lists1 =lists;
+//       2、还可以这样创建泛型类型数组
+        ArrayList<String>[] lists2 = new ArrayList[5];
+        ArrayList<String> str= new ArrayList<String>();
+        lists2[0]=str;
+
+
+        //创建自定义泛型数组
+        Fruit<String> fruit = new Fruit<String>(String.class,3);
+        
+        fruit.put(0,"苹果");
+        fruit.put(1,"西瓜");
+        fruit.put(2,"香蕉");
+
+        System.out.println(Arrays.toString(fruit.getArray()));
+    }
+}
+
+```
+
+
+
+### 1-3、泛型的好处
 
 ```
 1.可以限定类型，避免类型转换的错误
 2.可以把运行时的异常提前到编译期
 ```
 
-### 16-4、注意
+### 1-4、注意
 
 ```
 1.泛型不接受八种基本数据类型，必须申明引用类型
@@ -1716,12 +2611,620 @@ public class Demo02Generic {
 
 
 
- ## 17、反射
+ ## 2、反射
 
- ## 18、注解
+ ## 3、注解
 
+ ## 4、集合容器
+ 1.集合的继承关系
+ ![集合关系图](imges/集合完整继承关系图.png)
+
+ 常用集合
+ ![常用集合](imges/集合0.png)
+ ### 4-1、Collection
+ 所有集合的父类接口
+ #### 4-1-1、List
+ List接口集合代表一个有序的，可重复的集合，集合每个元素都有对应的索引顺序。
+ List集合默认按照元素顺序设置元素的索引，可以通过索引来访问指定位置的集合元素。
+ 实现List接口的集合常用的有:ArrayList、LinkedL ist、Vector子类等。
+
+##### 4-1-1-1、ArrayList
+1）、概述：
+
+    ArrayList 是我们最常用的遍历数据的集合，底层是Object类型的数组，
+    允许设置值为null;该Object类型数组默认为0，可以添加长度，自动扩容；
+
+2）、特点：
+
+    ArrayList是一个有序可扩容的长度的数组，所以可以插入有序的可重复的元素，
+    优点是可以快速通过下标获取元素，遍历元素和查找快。
+    缺点是由于插入删除需要位移，所以插入和删除效率慢。
+
+3）、具体使用：
+
+```java
+package javase.day18.se03.n1Collection;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+/**
+ * @author BING
+ * @date 2020/9/7 11:16
+ */
+public class Demo04ArrayList {
+    public static void main(String[] args) {
+        /**
+         *ArrayList集合数据存储的结构是数组结构。元素增删慢，查找快。由于日常
+         * 开发中使用最多的功能就是查询数据、遍历数据，所以，ArrayList是 最常用
+         * 的集合。但是，倘若我们需求的容器是经常要增删、不怎么查找的话，就不应该
+         * 任意的滥用ArrayList。|
+         *
+         *
+         */
+
+        //构造方法初始化ArrayList
+        /**
+         *  public ArrayList(Collection<? extends E> c) {
+         *         elementData = c.toArray();
+         *         if ((size = elementData.length) != 0) {
+         *             // c.toArray might (incorrectly) not return Object[] (see 6260652)
+         *             if (elementData.getClass() != Object[].class)
+         *                 elementData = Arrays.copyOf(elementData, size, Object[].class);
+         *         } else {
+         *             // replace with empty array.
+         *             this.elementData = EMPTY_ELEMENTDATA;
+         *         }
+         *     }
+         */
+        List<Student> list1 = new ArrayList();
+        list1.add(new Student("小j",15));
+        list1.add(new Student("小k",18));
+        list1.add(new Student("小l",16));
+        ArrayList<Student> students= new ArrayList<>(list1);
+        //底层先使用List.toArray()，转换成数组,用了数组复制方法Arrays.copyOf(数组,容量,数据类型)
+        for (Student s:students
+             ) {
+            System.out.println(s);
+        }
+        System.out.println();
+        //克隆
+        //clone() 复制一个ArrayList到另一个ArrayList中去
+        ArrayList oldArray=new ArrayList();
+        ArrayList newArray = (ArrayList) oldArray.clone();
+
+
+        List list = new ArrayList(10);
+
+
+        //添加元素
+        //将指定元素添加到此列表（可选操作）的结束。
+        list.add(100);
+        list.add("小明");
+        //可以添加重复元素
+        list.add(100);
+        //可以添加null;
+        list.add(null);
+
+        //通过索引添加元素，原来索引往后移
+        list.add(1,100.0001);
+        //添加集合
+        list.addAll(students);
+        ArrayList a= new ArrayList(list);
+        //在倒数第1个开始插入新集合的所有元素
+        list.addAll(list.size()-2,students);
+
+        //get(index i)获取索引为i的元素
+        //list.size()-1为最后一个元素
+        System.out.println(list.get(list.size()-1));
+
+        //遍历
+        //迭代器
+        Iterator iterator = a.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+        System.out.println();
+        //foreach
+        for (Object o:list
+             ) {
+            System.out.println(o);
+        }
+        System.out.println();
+        //foreach遍历器
+        for (Iterator it= list.iterator(); it.hasNext();
+             ) {
+            System.out.println(it.next());
+        }
+        
+        /**
+		*
+		*
+		**/
+
+        //泛型集合
+//      泛型是一种类型约束；
+//      不用泛型时，集合可以添加任意元素
+        ArrayList list2 = new ArrayList(10);
+        list2.add(1);
+        list2.add(1.2);
+        list2.add("ss");
+        list2.add(true);
+//      但是遍历读取时，只能用Object类型接收，
+        Object obj = list.get(2);
+//      需要强转成需要的类型，才能使用使用指定对象的功能
+        String s= (String) list.get(2);
+//        使用泛型时
+        ArrayList<String> strings = new ArrayList<String>();
+        //只能添加String类型的
+        strings.add("小明");
+        strings.add("小k");
+        strings.add("小l");
+//        strings.add(2);//报错
+//        输出String类型元素
+        for (String str:strings
+             ) {
+            System.out.println(str);
+        }
+    }
+}
+
+```
+##### 4-1-1-2、LinkedList
+
+```text
+把元素插入到集合容器中的同时,将该元素记录在该元素的前、后的位置。所以插入和删除该元素不需要位移。
+linkedList集合的geti) ,是根据下标为参数,先将index位置化成两半,如果index是小于集合的一半就是从第一个
+往后找。知道找到index的值赋给x返回,如果大于就从集合最后的值往前找，找到index的個赋给x返回，这样可
+以减少一部分不必要的遍历。 但是还是没有ArrayLlst直接找到下标位置的元素效率高!
+```
+
+
+
+#####　4-1-1-3、Vector
+
+Vector 的操作与ArrayList一样，但是区别于：
+
+```java
+1、Vector是线程安全的，关键的方法有锁（synchronized修饰方法）增加了系统开销，降低了效率；ArrayList是非线程安全的
+2、ArrayList在底层数组不够用时在原来的基础数拓展0.5倍，Vector是拓展1倍
+```
+
+#### 4-1-2、Set
+
+##### 4-1-2-1 LinkedHashSet
+
+```text
+linkedHashset是介于Hashset和Tr eeSet之间,内部是一一个双向链表结构，所以它插入是有有序的。1inkedHashset
+是HashSet的一个子类，具有HashSet的特性,也是根据元素的hashCode值来决定元素的存储位置。但它使用链表维护元
+素的次序，元素的顺序与源加顺序-致。由于L inkedHashset需要维护元素的插入顺序，因此性能上略低于Hashset,但在造代访问Set.里面的全部元素时候有很好的性能。
+
+```
+
+##### 4-1-2-2、HashSet
+
+##### 4-1-2-3、TreeSet
+
+#### 4-1-3、Map
+
+```text
+Map接口下的集合采用键值对Map<k，v>的存储方式，保存具有映射关系的数据。因此Map集合里保存两组值，-组用于保存
+Map里面的key，另外-组值用于保存Map的value值，key和value可以是任意引用类型的数据。
+Key值不允许重复,可以为nu11。
+如果添加key-value键值对时已经有重复的key ,则新添加的value会覆盖key原来对应的value值。
+常用的实现类有HashMap、LinkedHashMap、 TreeMap等。
+
+```
+
+hashMap是以hash算法存储的，无序的
+
+linkedHashMap链表存储的 有序的
+
+TreeMap红黑树，非线程安全，有序。
+
+##### 4-1-3-1、HashMap
+
+```java
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+/**
+ * @author BING
+ */
+public class HashMap_Test {
+    public static void main(String[] args) {
+        HashMap<String,String> hm = new HashMap<String,String>();
+//        增 改
+        hm.put("xiao",null);
+        //put(k,v)如果没有增加，如果有修改值
+        hm.put("xiao","15");
+        //键值可以为空， 键只能有一个为null
+        hm.put(null,null);
+        hm.put(null,"15");
+        hm.put("15",null);
+        System.out.println(hm);
+//        删除
+//        删除键
+        hm.remove(null);
+        //删除键值对
+        hm.remove(null,null);
+//        查
+        //get(key)
+        hm.get("xiao");
+//        是否包含键
+        hm.containsKey(null);
+//            是否包含值 
+        hm.containsValue(null);
+
+        //遍历
+//        foreach()遍历
+//        entrySet();返回一个键值对集合
+        Set<Map.Entry<String,String>>  entrySet= hm.entrySet();
+        for (Map.Entry<String,String>keys:entrySet) {
+            System.out.println(keys.getKey()+"="+keys.getValue());
+        }
+//        Iterator
+//        keySet;返回键的集合
+        Set<String> keys = hm.keySet();
+        Iterator<String> it = keys.iterator();
+        while(it.hasNext()){
+            String key = it.next();
+            String value = hm.get(key);
+            System.out.println(key+"="+value);
+        }
+    }
+
+}
+
+```
+
+##### 4-1-3-2、linkedHashMap
+
+```text
+LinkedHashMaplMap接口的哈希表算法和连接列表实现，具有顺序的Map
+采用双向涟表来维护key-value对的次序(其实只要考虑key的次序即可) , 该随表负责维护Map的迭代顺序，与插入顺序一
+致，因此性能比HashMap第,但在选代Map李的全部元素时有较好的性能
+
+LinkedHas hMap以双向链表式按照你插入元素的顺序放到L inkedHashMap容器中
+插入性能低，按键取值性能比hashMap低,但是遍历所有的值的时候效率高
+
+
+```
+
+代码：
+
+```java
+/**
+ * @author BING
+ */
+public class LinkedHashMap_Test {
+    public static void main(String[] args) {
+
+        LinkedHashMap<Student,Integer> linkedHashMap = new LinkedHashMap();
+        linkedHashMap.put(new Student("小明","18"),0);
+        linkedHashMap.put(new Student("小k","19"),1);
+        linkedHashMap.put(new Student("小l","18"),2);
+
+        Set<Map.Entry<Student, Integer>> entries = linkedHashMap.entrySet();
+        Iterator<Map.Entry<Student, Integer>> iterator = entries.iterator();
+        for (Iterator<Map.Entry<Student, Integer>> entryIterator = entries.iterator(); entryIterator.hasNext(); ) {
+            Map.Entry<Student, Integer> next =  entryIterator.next();
+            System.out.println(next.getKey()+"\t"+next.getValue());
+        }
+    }
+}
+//输出：
+Student{id='null', name='小明', age='18', className='null', profession='null'}	0
+Student{id='null', name='小k', age='19', className='null', profession='null'}	1
+Student{id='null', name='小l', age='18', className='null', profession='null'}	2
+```
+
+
+
+##### 4-1-3-3、TreeMap
+
+```
+基于红黑树算法的实现，非线程安全,不允许nu11, key不允许重复。它是SortedMap的实现类,会根据红黑树算法将key排
+序后插入到TreeMap容器中。也可采用自然排序和自定义排序。
+如果要采用自定义排序，可以实现Compareab1e接口或者ompar ator接口来重写compar ato方法来自定义排序规则
+```
+
+实现：
+
+```java
+/**
+ * @author BING
+ */
+public class TreeMap_Test {
+    public static void main(String[] args) {
+        //TreeMap是会排序后插入到容器中(linkedHashMap是按序插入)
+        //默认是自然排序，如果需要使用新的的规则，需要实现Comparator接口重写排序规则
+
+        Map<String,Integer>map = new TreeMap<>();
+        map.put("小d",18);
+        map.put("小c",20);
+        map.put("小a",19);
+        map.put("小b",17);
+
+        Set<Map.Entry<String, Integer>> entries = map.entrySet();
+        for (Iterator<Map.Entry<String, Integer>> iterator = entries.iterator(); iterator.hasNext(); ) {
+            Map.Entry<String, Integer> next =  iterator.next();
+            System.out.println(next.getKey()+"\t"+next.getValue());
+        }
+    }
+}
+
+```
+
+
+
+
+
+##### 4-1-3-4、Properties
+
+```
+Properties类是HashTable的子类，它相当于一-个key、 va lue都是Str ing类型的Map,主要用于读取配置文件，比如之
+前学习过的1og4j . pr operti es配置文件，将系统的配置信息配置在该文件中。
+
+```
+
+##### 4-1-3-5、Hashtable
+
+操作与HashMap一样，但是Hashtable是线程安全的，所以效率比HashtMap低
+
+
+
+各Map实现类的性能分析:
+1. HashMap以哈希算法存储，存储无序的，通过键获取值速度最快;最常用  
+2. linkedHashMap以双向链表式存储，会按照存储的顺序存放到集合容器里，因为还要记录存储的顺序所以效率偏低，但是
+遍历集合效率高
+3. Pr operties集合也是以键值对形式存储，-般用于配置文件的存储，比如1og4j配置
+4. TreeMap以红黑树算法存储，存储的是会按照排序后再去存储在集合容器中，排序方式有自然排序和定制排序
+5. HashTableHashMap-一样的存储方式，Hashtable考虑线程安全，HashMap不考虑线程安全,查询效率上HashMap要更快
+
+### 4-2、collections工具类
+
+```java
+/**
+ * 通过TreeSet比较顺序
+ * 1、可以通过实体类实现comparable接口实现comparableTo()方法写一套比较规则
+ * 2、通过类实现comparator接口实现compare(<T>o1,<T>o2)方法写比较器
+ */
+
+
+```
+
+Student类
+
+```java
+/**
+ *	实体类实现Comparable接口
+ **/
+public class Student implements Comparable<Student> {
+   private  String name ;
+
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public String toString() {
+        return
+                "name='" + name + '\'' +
+                ", age=" + age ;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    private int age;
+
+    public Student() {
+    }
+
+    public Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+//重写比较规则
+    @Override
+    public int compareTo(Student o) {
+
+//        根据姓名排序
+//        加-取反
+        return this.getName().compareTo(o.getName());
+//        根据年龄排序降序
+//        return this.age-o.age;
+//        根据年龄排序升序
+//        return o.age-this.age;
+    }
+}
+```
+
+* 1、可以通过实体类实现comparable接口实现comparableTo()方法只能写一套比较规则
+
+```java
+/**
+ * @author BING
+ */
+public class Collections_Test {
+    public static void main(String[] args) {
+        List<Integer> list = new ArrayList<>();
+        list.add(50);
+        list.add(10);
+        list.add(30);
+        list.add(80);
+        list.add(100);
+        //使用工具类排序 升序
+        Collections.sort(list);
+        System.out.println(list.toString());
+        //输出：[10, 30, 50, 80, 100]
+        //使用Tree自然排序 升序
+        Set<Integer> set= new TreeSet<>(list);
+        System.out.println(set.toString());
+        //输出：[10, 30, 50, 80, 100]
+        //使用Tree自定义排序
+        /**
+         * 通过TreeSet比较顺序
+         * 
+         */
+
+        Set<Student>studentSet = new TreeSet<>();
+        studentSet.add(new Student("小w",10));
+        studentSet.add(new Student("小a",19));
+        studentSet.add(new Student("小k",12));
+        studentSet.add(new Student("小v",16));
+        studentSet.add(new Student("小q",19));
+
+        for (Iterator<Student> iterator = studentSet.iterator(); iterator.hasNext(); ) {
+            Student next =  iterator.next();
+            System.out.println(next);
+        }
+    }
+}
+```
+
+* 2、通过类实现comparator接口实现compare(<T>o1,<T>o2)方法写比较器，有多套比较规则
+
+  
+
+# 四、设计模式
+
+## 1、单例模式
+
+    所谓单例，就是整个程序有且仅有一个实例。
+    该类负责创建自己的对象，同时要确保只有一个对象被创建。
+    好处就是一个类你只能创建一个实例对象会节约了内存开销。
+    一般常用在工具类的实现。
+    
+    特点：
+    类构造器私有 
+    持有自己类型的属性 
+    对外提供获取实例的静态方法 
+### 1-1、懒汉单例
+延迟加载，线程不安全，严格意义上不是单例模式
+
+    该模式的特点是类加载时没有生成单例，只有当第一次调用 getlnstance 方法时才去创建这个单例。
+    非线程安全，调用方法的时候才创建对象（延迟加载）
+```java
+public calss LazySingleton{
+    //持有自己类型的属性
+    private static  LazySingleton instance  = null; 
+    //类构造器私有
+    private lazySingleton(){}
+    //对外提供获取实例的静态方法
+    public static LazySingleton getInstance(){
+        if(instance == null){
+            instance =new LazySingleton(); 
+        }    
+        return instance;
+    }
+}
+```
+改进的懒汉单例
+```java
+/**
+ * 改进的懒汉单例
+**/
+public calss LazySingleton{
+    //保证instance 在所有线程中同步
+    private static volatile LazySingleton instance  = null; 
+    private lazySingleton(){}
+    public static synchronized LazySingleton getInstance(){
+        if(instance == null){
+            instance =new LazySingleton(); 
+        }    
+        return instance;
+    }
+}
+```
+注意：添加了关键字 volatile 和 synchronized，否则将存在线程非安全的问题。
+如果不删除这两个关键字就能保证线程安全，但是每次访问时都要同步，会影响性能，且消耗更多的资源，这是懒汉式单例的缺点。
+
+### 1-2、饿汉单例
+线程安全，比较常用，但是容易产生垃圾，
+因为饿汉模式是一开始加载类的时候就初始化了实例
+```java
+public class HungrySingleton{
+    //持有自己类型的属性
+    //由于static 修饰，只在类加载的时候执行
+    private static final HungrySingleton instance= new Singleton();
+    private HungrySingleton(){}
+    public static HungrySingleton getInstance(){
+        return instance;
+    }
+}
+```
+### 1-3、双检索模式
+结合懒汉单例和饿汉单例的优点，延迟加载并且线程安全
+```java
+public class DoubleSearchSingleton{
+    //volatile
+    private static volatile DoubleSearchSingleton instance;
+    private DoubleSearchSingleton(){}
+    public static DoubleSearchSingleton getInstance(){
+        if(instance=null){
+            synchronized(DoubleSearchSingleton.class){
+                if(instance==null){
+                        instance=new DoubleSearchSingleton();
+                }    
+            }
+        }
+    }
+}
+```
+双检锁模式，进行两次判断，第一次判断是为了避免不要的实例，第二次是了进行同步，避免多线程问题。
+ 由于Singleton instance()对象在创建的时候jvm中可能会重新排序，在多线程访问下存在风险。
+ 使用 volatile修饰 instance实例操作不会被jvm重排序。解决该问题
+### 1-4、内部模式
+
+
+```java
+public class InnerSingleton{
+    privtae Singleton(){}
+    public static InnerSingleton(){
+        return Inner.instance;
+    }
+    public static  class Inner{
+        //常量，不能被改变
+        private static final InnerSingleton instance = new InnerSingleton();    
+    } 
+}
+```
+只有第一次调用getInstance()方法时，虚拟机才加载Inner并初始化instance，
+只有一个线程可以获得对象的初始化锁，其他线程无法进行初始化,保证对象的唯一性。
+【目前此方式是所有单例模式中最值得 推荐的一种方式】
+
+### 1-5、通过枚举实现单例
+默认枚举实例的创建是线程安全的，并且在任何情况下都是单例
+实际上枚举类隐藏了私有的构造器。 
+枚举类的域 是相应类型的一个实例对象 
+那么枚举类型日常用例是这样子的：
+```java
+public enum EnumSingleton{
+    INSTANCE;
+    //doSomething 该实例支持的行为
+    //可以省略此方法。通过Singleton、  INSATANCE进行操作
+    public static EnumSIngleton getInstance(){
+        return Singleton.INSTANCE;
+    }
+}
+```
+
+## 2、
 #  五、Java关键字
-## 常用关键字
+## 1、常用关键字
 
     1)访问控制:
     	private	protected	public				
@@ -1740,22 +3243,22 @@ public class Demo02Generic {
     8)保留字:
         goto	const
 
-## static
+##2、static
 
-### 1）、static 修饰的变量 类变量
+### 2-1、static 修饰的变量 类变量
 
     我们用static表示变量的级别，一个类中的静态变量，不属于类的对象或者实例。因为静态变量与所有的对象实例共享，因此他们不具线程安全性。
     通常，静态变量常用final关键来修饰，表示通用资源或可以被所有的对象所使用。如果静态变量未被私有化，可以用“类名.变量名”的方式来使用。
 
-### 2）、static 修饰的方法 静态方法
+### 2-2、static 修饰的方法 静态方法
 
     一个静态方法只能使用静态变量和调用静态方法。通常静态方法通常用于想给其他的类使用而不需要创建实例。例如：Collections class(类集合)。
 
-### 3）、static 修饰的代码块 静态代码块
+### 2-3、static 修饰的代码块 静态代码块
 
     Java的静态块是一组指令在类装载的时候在内存中由Java ClassLoader执行。
     静态块常用于初始化类的静态变量。大多时候还用于在类装载时候创建静态资源。
-   
+
 ```java
 public class Student {
     String name = "张三";
@@ -1802,7 +3305,7 @@ class Test{
     }
 }
 ```
-## final 
+## 3、final 
 final 关键字声明类可以把类定义为不能继承的，即最终类；或者用于修饰方法，该方法不能被子类重写
 ### 声明类：
 ```java
@@ -1812,14 +3315,79 @@ final class 类名 {//类体}
 ```java
 修饰符(public/private/default/protected) final 返回值类型 方法名(){//方法体}
 ```
-## this和 super
+## 4、this和 super
 
     1)、 this:
         代表当前对象的引用。使用场景:对象调用本类的成员变量成员方法，也可以调用本类的构造方法
     2)、 super: 
         代表本对象的父类对象。使用场景:在子类中调用本对象的父类对象，调用父类构造方法
     3)、 在子类没有重写父类方法的情况下,也可以通过this调用父类方法
-#  n、Java 内存理解
-## 堆
- 
 
+## 5、break
+
+```text
+中断的意思，遇到break跳出循环语句结束循环
+```
+
+```java
+	for (int i = 1; i <=10; i++) {
+		if (i==5) {
+		break;//遇到break直接跳出循环语句结束循环
+		}
+		System.out.println(i);
+	}
+//结果:1 2 3 4 
+```
+## 6、continue
+
+```text
+继续的意思，遇到continue，continue后面的代码不执行，直接继续执行下一次循环
+```
+
+```java
+	for (int i = 1; i <=10; i++) {
+		if (i==5) {
+			continue;//遇到continue后面代码不执行，直接继续下一次循环
+		}
+		System.out.println(i);
+	}
+//结果: 1 2 3 4  6 7 8 9  10
+```
+## 7、return
+
+```java
+用于方法内部返回结果值,也会提前结束循环返回结果
+```
+
+```java
+public boolean login(String name,int pwd){
+		for (int i = 0; i < names.length; i++) {
+			if (names[i].equals(name)&&passwords[i]==pwd) {
+				return true;//返回结果，结束循环
+			}
+		}
+		return false;
+	}
+```
+#  n、Java 内存理解
+## 1、概述
+
+系统中的堆栈和数据结构的堆栈不是一个概念，系统中的堆和栈是真实的物理内存
+
+数据结构中的堆栈是抽象的数据存储结构。
+
+## 2、数据结构的堆栈
+
+### 2-1、栈
+
+实际上就是满足先进后出的性质，是一种数据项按顺序排列的数据结构，只能在一端（称为栈顶（top）对数据项进行插
+
+入和删除。
+
+![image-20200827163742212](imges/栈.png)
+
+### 2-2、堆
+
+堆是一种万全二叉树或者近似完全二叉树，完全二叉树是一种的效率很高的数据结构，像十分常用的排序算法，Dijkstra算法、prim算法等都要用到堆才能优化
+
+![image-20200827164456372](imges/堆.png)
